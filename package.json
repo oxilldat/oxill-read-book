@@ -1,0 +1,41 @@
+{
+  "name": "oxill-read-book",
+  "version": "1.0.0",
+  "description": "Read EPUB, FB2 and PDF books inside Obsidian, highlight passages and turn them into notes.",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "postinstall": "node patch-pdfjs.cjs",
+    "dev": "node esbuild.config.mjs",
+    "build": "node esbuild.config.mjs production && node patch-pdfjs.cjs"
+  },
+  "keywords": [
+    "obsidian",
+    "obsidian-plugin",
+    "epub",
+    "fb2",
+    "pdf",
+    "reader",
+    "highlights"
+  ],
+  "author": "oxill",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "0.28.1",
+    "eslint": "^9.39.5",
+    "eslint-plugin-obsidianmd": "^0.4.1",
+    "jsdom": "^29.1.1",
+    "obsidian": "latest"
+  },
+  "dependencies": {
+    "epubjs": "^0.3.93",
+    "jszip": "^3.10.1",
+    "localforage": "^1.10.0",
+    "pdfjs-dist": "^6.2.108"
+  },
+  "overrides": {
+    "@xmldom/xmldom": "^0.9.12",
+    "brace-expansion": "^2.0.2",
+    "tar": "^7.5.22"
+  }
+}
