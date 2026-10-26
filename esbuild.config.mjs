@@ -160,6 +160,9 @@ const ctx = await esbuild.context({
   format: "cjs",
   target: "es2018",
   logLevel: "info",
+  // Community Plugins and BRAT install only main.js, manifest.json and
+  // styles.css. Embed the author photo so it cannot disappear after install.
+  loader: { ".jpg": "dataurl" },
   // No source map in the release build: it tripled the file size, and reviewers
   // read the sources in src/ anyway.
   sourcemap: prod ? false : "inline",
